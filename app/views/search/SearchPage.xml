@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <ActionBar title="Recipe Explorer" class="action-bar" />
+    
+    <StackLayout class="p-4">
+        <SearchBar hint="Search recipes..." submit="{{ onSearchSubmit }}" class="mb-4" />
+        
+        <ActivityIndicator busy="{{ isLoading }}" class="mb-4" />
+        
+        <ListView items="{{ recipes }}" class="list-group" itemTap="{{ onRecipeTap }}">
+            <ListView.itemTemplate>
+                <GridLayout rows="auto" columns="80, *" class="p-2 border-b border-gray-200">
+                    <Image row="0" col="0" src="{{ image }}" width="80" height="80" class="rounded" />
+                    <StackLayout row="0" col="1" class="ml-2">
+                        <Label text="{{ title }}" class="font-bold text-lg" textWrap="true" />
+                        <Label text="{{ readyInMinutes + ' minutes | ' + servings + ' servings' }}" class="text-sm text-gray-500" />
+                    </StackLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </StackLayout>
+</Page>

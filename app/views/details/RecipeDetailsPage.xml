@@ -1,0 +1,26 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="{{ recipe.title }}" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <ActivityIndicator busy="{{ isLoading }}" />
+            
+            <Image src="{{ recipe.image }}" height="300" stretch="aspectFill" />
+            
+            <Label text="{{ recipe.title }}" class="text-2xl font-bold my-4" textWrap="true" />
+            
+            <GridLayout columns="auto, *" class="mb-4">
+                <Label col="0" text="🕒" class="text-xl" />
+                <Label col="1" text="{{ recipe.readyInMinutes + ' minutes' }}" class="text-lg ml-2" />
+            </GridLayout>
+            
+            <GridLayout columns="auto, *" class="mb-4">
+                <Label col="0" text="👥" class="text-xl" />
+                <Label col="1" text="{{ recipe.servings + ' servings' }}" class="text-lg ml-2" />
+            </GridLayout>
+            
+            <Label text="Instructions" class="text-xl font-bold mt-4 mb-2" />
+            <Label text="{{ recipe.instructions }}" textWrap="true" class="text-base" />
+        </StackLayout>
+    </ScrollView>
+</Page>

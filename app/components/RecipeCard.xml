@@ -1,0 +1,14 @@
+<GridLayout xmlns:Card="@nativescript-community/ui-material-cardview" columns="*" rows="auto" class="m-2">
+    <Card:CardView elevation="2" radius="4" class="bg-white">
+        <GridLayout rows="auto, auto" columns="*">
+            <Image row="0" src="{{ image }}" height="200" stretch="aspectFill" />
+            <StackLayout row="1" class="p-3">
+                <GridLayout columns="*, auto">
+                    <Label col="0" text="{{ title }}" class="text-lg font-bold" textWrap="true" />
+                    <Button col="1" text="{{ isFavorite ? '❤️' : '🤍' }}" tap="onFavoritePress" class="text-2xl" />
+                </GridLayout>
+                <Label text="{{ readyInMinutes + ' minutes | ' + servings + ' servings' }}" class="text-sm text-gray-500" />
+            </StackLayout>
+        </GridLayout>
+    </Card:CardView>
+</GridLayout>
